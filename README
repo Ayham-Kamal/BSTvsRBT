@@ -1,0 +1,67 @@
+Files Guide:
+Testcases.txt: The test cases illustration file (with
+explanations). 
+T1.txt, T2.txt, T3.txt, .... : Actual test
+cases.
+Makefile: The "Makefile" file, for compiling and running.
+program.cc: Program (main) file.
+constants.h: All constants header file.
+utility.h: All utility functions header file.
+utility.cc: All utility functions implementation file.
+Node.h: Binary Search Tree Node's class header file. 
+Node.cc: Binary Search Tree Node's class implementation file.
+RB_Node.h: Red Black Tree Node's class header file. 
+RB_Node.cc: Red Black Tree Node's class implementation file.
+BinSearchTree.h: Binary Search Tree class header file.
+BinSearchTree.cc: Binary Search Tree class implementation file.
+RedBlackTree.h: Red Black Tree class header file.
+RedBlackTree.cc: Red Black Tree class implementation file.
+intUtil.h: All utility functions header file for the input.
+intUtil.cc: All utility functions implementaion file for the input.
+InputStream.h: Class (InputStream) header file. (Dealing with input)
+InputStream.cc: Class (InputStream) implementation file.
+MyString.h: Class (MyString) header file. (String Holder)
+MyString.cc: Class (MyString) implementation file.
+utility.h: Utility functions header file.
+utility.cc: Utility functions implementation file.
+
+Makefile: The "Makefile" file, for compiling and running.
+---------------------------------------------------------------------------
+How to compile:
+Run the command:
+make
+This will create the execuatable called program
+---------------------------------------------------------------------------
+How to run:
+You can run the program by one of the two flags: -f / -p:
+1. To do the flag -f which means having a file input that have
+shortcuts for each of the three operations (Insert: i, Delete: d,
+Search: s), each time the program reads one of these shortcuts it will
+perform the operaton that it stands for. And it will perform it on the
+"numbers" that follow these shortcuts. For example: i 20 40: means
+insert these numbers: 20 40 to the trees. And the same happens for
+other operations. Once the program reads a new shortcut "strings" from
+specified above it will not perform any operation on the numbers that
+it reads after the new shortcut. Once, the program finish doing the
+operations for the numbers following the shotrcut operation, it will
+output both trees in the following manners: "InOrder, PreOrder,
+PostOrder". Furthermore, if you want to see both trees at each stage
+of the operation, instead of having this in file "i 20 40", you would
+have this "i 20 i 40":
+run the command: ./program -f <fileName.txt
+
+2. To do the flag -p which means storing a dictionary using binary
+search tree and red black tree under different sets of probabilites
+for the three operations (Insert, Delete, Search). And it will compare
+the use of the two data structures based on:
+1. The number of key comparisons.
+2. The number of data movement operarions.
+3. The number of pointer assignments.
+4. The number of new nodes created.
+5. The number of nodes deleted.
+The probabilities for the three operations must be specified as fractions
+with values between 0 and 1. In the following format: Numerator/Denominator
+The reuslt of the comparisons will be shown in a new file.
+run the command:
+1. ./program -p <Num1/Den1> <Num2/Den2> <Num3/Den3>
+---------------------------------------------------------------------------

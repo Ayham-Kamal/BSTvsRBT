@@ -1,0 +1,72 @@
+Insertion Cases:
+
+1. Inserting into an Empty Tree
+Test Case: Insert 15
+Expected Result: 15 becomes the root and is colored black.
+
+2. Inserting as a Child of a Black Node
+Initial Tree: Root (20, black)
+Test Case: Insert 10
+Expected Result: 10 is added as a left child of 20 and colored red.
+
+3. Inserting a Red Node under a Red Parent (Requiring Right Rotation)
+Initial Tree:
+Root (20, black) with a left child (10, red)
+Test Case: Insert 5
+Expected Result: Right rotation at 20. Tree becomes:
+Root (10, black) with left child (5, red) and right child (20, red)
+
+4. Inserting that Causes Recoloring and Propagates Back to the Root
+Initial Tree:
+Root (40, black) with children (20, red) and (60, red)
+Test Case: Insert 10 (under 20)
+Expected Result: After insertion, 20, 40, and 60 will all be black,
+and 10 will be red. 
+
+5. Inserting that Requires Complex Restructuring (Left-Right Rotation)
+Initial Tree:
+Root (50, black) with left child (20, black), right child (60, black)
+20 has a right child (30, red)
+Test Case: Insert 25
+Expected Result: Double rotation (left-right). Tree becomes:
+Root (50, black) with children (25, black) and (60, black). 25 has two
+children (20, red) and (30, red).
+
+Deletion Cases:
+1. Deleting a Leaf Node
+Initial Tree:
+Root (30, black) with children (20, red) and (40, red)
+Test Case: Delete 20
+Expected Result: 20 is removed. Tree remains balanced.
+
+2. Deleting a Red Node with a Black Child
+Initial Tree:
+Root (55, black), with left child (40, black), and right child (65,
+red), 65 has two children (60, black) and (75, black), 60 has a left
+child (57, red).
+Test Case: Delete 65
+Expected Result: 60 takes place of 65 and colored red.
+
+3. Deleting a Black Node with Red Child
+Initial Tree:
+Root (30, black) with a left child (20, black), with right child (40,
+black), 40 has two children (35, red) and (45, red)
+Test Case: Delete 40
+Expected Result: 40 is replaced by 45, and 45 is recolored black.
+
+4. Deleting a Black Node with Complex Restructuring
+Initial Tree:
+Root (50, black) with children (30, black) and (70, black)
+30 has children (20, red) and (40, red)
+Test Case: Delete 70
+Expected Result: Complex restructuring and recoloring to maintain tree
+balance.  
+
+5. Deleting a Node that Causes Double Black Issue
+Initial Tree:
+Root (40, black) with children (20, black) and (60, black)
+60 has a right child (70, red)
+Test Case: Delete 20
+Expected Result: Fixing the double black issue at 20's position,
+involving rotations and recoloring.  
+
